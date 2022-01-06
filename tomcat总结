@@ -1,0 +1,9 @@
+1 tomcat启动流程：
+  步骤一：Bootstrap类 init函数用来初始化Catalina类
+  
+  步骤二：Bootstrap类 load函数中通过parseServerXml() 来加载conf/server.xml 从而实例化Server以及server中的关联类，结构和server.xml中配置结构类似
+  
+  步骤三：Bootstrap类 start函数用于启动tomcat ，sever/service/container均实现Lifecycle接口，通过抽象类LifecycleBase的start（）来实现启动功能，具体每个类的启动通过当前类的startInternal（）
+         函数实现。
+         
+        
